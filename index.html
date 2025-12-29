@@ -8,7 +8,7 @@
 <style>
 body {
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
     background: url("assets/bg-capodanno.jpg") center/cover no-repeat;
     font-family: "Playfair Display", "Didot", serif;
     overflow: hidden;
@@ -18,11 +18,7 @@ body {
 .overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-        circle at top,
-        rgba(255,215,160,0.2),
-        rgba(0,0,0,0.75)
-    );
+    background: radial-gradient(circle at top, rgba(255,215,160,0.2), rgba(0,0,0,0.75));
     z-index: 1;
 }
 
@@ -33,7 +29,6 @@ body {
     z-index: 2;
     pointer-events: none;
 }
-
 .sparkles span {
     position: absolute;
     bottom: -20px;
@@ -42,7 +37,6 @@ body {
     animation: floatUp linear infinite;
     opacity: 0;
 }
-
 @keyframes floatUp {
     0% { transform: translateY(0); opacity: 0; }
     10% { opacity: 0.8; }
@@ -58,102 +52,51 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .card {
     background: rgba(0,0,0,0.6);
     border-radius: 30px;
-    padding: 60px 40px;
+    padding: 40px 25px;
     max-width: 480px;
+    width: 100%;
     text-align: center;
-    box-shadow:
-        0 0 70px rgba(0,0,0,0.9),
-        inset 0 0 40px rgba(230,197,143,0.1);
+    box-shadow: 0 0 70px rgba(0,0,0,0.9), inset 0 0 40px rgba(230,197,143,0.1);
     animation: fadeUp 1.6s ease;
 }
 
-.logo {
-    width: 150px;
-    margin-bottom: 25px;
-}
+.logo { width: 150px; margin-bottom: 25px; }
+h1 { font-size: 3rem; color: #f6e7c6; letter-spacing: 1.5px; }
+.divider { width: 90px; height: 2px; background: linear-gradient(90deg, transparent, #e6c58f, transparent); margin: 28px auto; }
+p { font-size: 1.3rem; line-height: 1.5; color: #f5ecd8; }
 
-h1 {
-    font-size: 3.3rem;
-    color: #f6e7c6;
-    letter-spacing: 1.5px;
-}
+#gift { margin-top: 30px; cursor: pointer; transition: transform 0.4s ease, filter 0.4s ease; display: inline-block; }
+#gift img { width: 140px; display: block; margin: 0 auto; }
+#gift:hover { transform: scale(1.12); filter: drop-shadow(0 0 20px rgba(230,197,143,0.9)); }
 
-.divider {
-    width: 90px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #e6c58f, transparent);
-    margin: 28px auto;
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px);} to { opacity:1; transform:translateY(0);} }
 
-p {
-    font-size: 1.4rem;
-    line-height: 1.65;
-    color: #f5ecd8;
-}
-
-/* ANIMAZIONE REGALO */
-#gift {
-    position: relative;
-    display: inline-block;
-    margin-top: 35px;
-    cursor: pointer;
-    transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-#gift img {
-    width: 155px;
-    display: block;
-}
-
-#gift:hover {
-    transform: scale(1.12);
-    filter: drop-shadow(0 0 20px rgba(230,197,143,0.9));
-}
-
-#gift .sparkle-gift {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    background: radial-gradient(circle, #f3d9a4, #caa86a);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    animation: sparkleGift 1.5s infinite alternate;
-}
-
-@keyframes sparkleGift {
-    0% { transform: translateX(-50%) scale(0.8); opacity: 0.3; }
-    50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
-    100% { transform: translateX(-50%) scale(0.8); opacity: 0.3; }
-}
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+/* media query mobile */
+@media (max-width: 480px){
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; line-height: 1.4; }
+    .logo { width: 120px; }
+    #gift img { width: 100px; }
 }
 </style>
 </head>
 
 <body>
-
 <div class="overlay"></div>
 
-<!-- PARTICELLE -->
 <div class="sparkles">
-    <!-- grandi -->
     <span style="left:10%; width:6px; height:6px; animation-duration:14s;"></span>
     <span style="left:25%; width:5px; height:5px; animation-duration:18s;"></span>
     <span style="left:40%; width:7px; height:7px; animation-duration:16s;"></span>
     <span style="left:60%; width:6px; height:6px; animation-duration:20s;"></span>
     <span style="left:80%; width:5px; height:5px; animation-duration:17s;"></span>
-
-    <!-- piccole -->
     <span style="left:15%; width:3px; height:3px; animation-duration:12s;"></span>
     <span style="left:30%; width:4px; height:4px; animation-duration:15s;"></span>
     <span style="left:50%; width:3px; height:3px; animation-duration:13s;"></span>
@@ -164,31 +107,22 @@ p {
 <div class="container">
     <div class="card">
         <img src="assets/logo-enjoy.png" class="logo" alt="Enjoy Parrucchieri">
-
         <h1>Welcome 2026 ✨</h1>
-
         <div class="divider"></div>
-
         <p>
             Un nuovo anno si apre come un brindisi raffinato,<br>
             fatto di bellezza autentica e rituali di benessere.<br><br>
             Grazie per aver scelto Enjoy Parrucchieri.<br>
             Ti auguriamo un 2026 luminoso e armonioso.
         </p>
-
-        <!-- REGALO ANIMATO -->
         <div id="gift" onclick="openGift()">
             <img src="assets/gift.png" alt="Apri il regalo">
-            <span class="sparkle-gift"></span>
         </div>
     </div>
 </div>
 
 <script>
-function openGift() {
-    window.location.href = "buono.html";
-}
+function openGift(){ window.location.href="buono.html"; }
 </script>
-
 </body>
 </html>
